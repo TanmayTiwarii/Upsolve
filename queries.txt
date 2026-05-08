@@ -1,0 +1,18 @@
+//this is graphql query for leetcode recent submissions
+{
+  "operationName": "recentAcSubmissions",
+  "variables": {
+    "username": "tiwaritanmay424",
+    "limit": 20
+  },
+  "query": "query recentAcSubmissions($username: String!, $limit: Int!) { recentAcSubmissionList(username: $username, limit: $limit) { id title titleSlug timestamp } }"
+}
+
+// this is the query that gives me the question id along with the tags
+{
+  "operationName": "questionData",
+  "variables": {
+    "titleSlug": "rotate-image"
+  },
+  "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug difficulty topicTags { name slug } } }"
+}
