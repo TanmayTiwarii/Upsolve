@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: leetcodehelper_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - /app/venv
+      - /app/__pycache__
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
